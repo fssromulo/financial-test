@@ -1,5 +1,7 @@
 # Code Challenge Rômulo
 
+This project have been using a Financial API and show a bunch of stocks and currencies. Then the user can view more details about the purchase/buy price of those data in a chart.
+
 ## Features
 
 I would like to Highlights some points of this project:
@@ -16,7 +18,7 @@ I would like to Highlights some points of this project:
 
 ## Demo
 
-Link to access the project running: https://main.d3h1ze7azyt8lc.amplifyapp.com/auth
+Link to access the project running: https://financial-test.vercel.app/
 
 ## Installation
 
