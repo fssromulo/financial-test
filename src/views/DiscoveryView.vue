@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<CardComponent key="currencies-list-card-component" title="Currencies" :list="list.currencies" />
-		<CardComponent key="stocks-list-card-component" title="Stocks" :list="list.stocks" />
+		<CardComponent key="currencies-list-card-component" title="Currencies" :list="currenciesList" />
+		<CardComponent key="stocks-list-card-component" title="Stocks" :list="stocksList" />
 		<Overlay v-model="isLoading" :loading="isLoading"></Overlay>
 	</div>
 </template>
@@ -9,7 +9,7 @@
 <script lang="ts">
 import CardComponent from '@/components/CardComponent.vue';
 import Overlay from "@/components/overlay/Overlay.vue";
-import { defineComponent, onMounted, ref, type Ref } from 'vue';
+import { computed, defineComponent, onMounted, ref, type Ref } from 'vue';
 import { useStore } from 'vuex';
 
 export default defineComponent({
@@ -35,6 +35,16 @@ export default defineComponent({
 			list.value = await searchFinancialData();
 		});
 
+		const currenciesList = computed((): any[] => {
+			// @ts-ignore
+			return list.value?.currencies ?? [];
+		});
+
+		const stocksList = computed((): any[] => {
+			// @ts-ignore
+			return list.value?.stocks ?? [];
+		});
+
 		function getIcon(variation: number): string {
 			return variation > 0 ? 'fas fa-arrow-up' : 'fas fa-arrow-down'
 		}
@@ -49,6 +59,8 @@ export default defineComponent({
 
 		return {
 			isLoading,
+			currenciesList,
+			stocksList,
 			list,
 			getIcon,
 			getIconVariationColor,

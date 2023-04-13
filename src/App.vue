@@ -17,8 +17,5 @@ const shouldShowHeader = computed((): boolean => {
 	return store.getters.isAuthenticated ?? false;
 });
 
-
 store.dispatch('autoLogin');
-
-
 </script>
