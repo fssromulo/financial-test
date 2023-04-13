@@ -1,6 +1,7 @@
 export default {
 	async searchFinancialData(context: any): Promise<any> {
-		const response = await fetch("https://api.hgbrasil.com/finance?key=1d717806&format=json-cors");
+		const apiKey = "a5d0f179";
+		const response = await fetch(`https://api.hgbrasil.com/finance?key=${apiKey}&format=json-cors`);
 		const responseData = await response.json();
 
 		if (!response.ok) {

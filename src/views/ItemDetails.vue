@@ -6,7 +6,7 @@
         <TitleComponent :content="`Details for ${itemRouterParam} - Purchase/Buy Price`"></TitleComponent>
 
         <Bar v-if="loadingChart && hasEnoughDataToShow" id="my-chart-id" :options="chartOptions" :data="chartData" />
-        <div v-else> Nothing to show yet... Come back later...</div>
+        <EmptyState v-else content="Nothing to show yet... Come back later..."></EmptyState>
     </div>
 </template>
 
@@ -18,6 +18,7 @@ import { Bar } from 'vue-chartjs';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import TitleComponent from "../components/Title.vue";
+import EmptyState from "../components/EmptyState.vue";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
