@@ -49,8 +49,8 @@ export default defineComponent({
 		Overlay
 	},
 	setup() {
-		const login: Ref<{ val: string, isValid: boolean }> = ref({ val: 'romulo.souza@teste.com', isValid: true });
-		const password: Ref<{ val: string, isValid: boolean }> = ref({ val: 'romulo', isValid: true });
+		const login: Ref<{ val: string, isValid: boolean }> = ref({ val: '', isValid: true });
+		const password: Ref<{ val: string, isValid: boolean }> = ref({ val: '', isValid: true });
 		const formIsValid: Ref<boolean> = ref(true);
 		const isLoading: Ref<boolean> = ref(false);
 		const router = useRouter();
